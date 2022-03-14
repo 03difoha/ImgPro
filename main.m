@@ -1,11 +1,10 @@
-image=loadImage('images1/rot_1.png');
+image=loadImage('images1/proj_4.png');
 
 
-figure
-imshow(Iblur1)
-title('Smoothed image, \sigma = 2')
+% imshow(Iblur1)
 
-circleCoordinates = findCircles(Iblur1);
+
+circleCoordinates = findCircles(image);
 % 
 % disp(circleCoordinates)
 
@@ -13,14 +12,8 @@ circleCoordinates = findCircles(Iblur1);
 
 % noisyRGB = imgaussfilt(image,1);
 
- redChannel = Iblur1(:, :, 1);
- greenChannel = Iblur1(:, :, 2)
- blueChannel = Iblur1(:, :, 3);
 
-
- BW = im2bw(Iblur1,0.1);
-imshow(BW)
-disp(greenChannel)
+% disp(greenChannel)
 % imshow(greenChannel)
 % imshow(blueChannel)
 
