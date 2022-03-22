@@ -1,0 +1,10 @@
+function [] = correctImage(image, fixedPoints, movingPoints, I)
+    if size(fixedPoints) == size(moving)
+    tform = fitgeotrans(movingPoints,fixedPoints,'NonreflectiveSimilarity');
+    Jregistered = imwarp(image,tform,'OutputView',imref2d(size(I)));
+    imshow(Jregistered)
+end
+
+
+
+

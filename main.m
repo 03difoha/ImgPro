@@ -18,8 +18,9 @@ myDir = fullfile('./images1'); %gets directory
 
 imageNames = [];
 imageThumbnails = [];
+
  myFiles = dir(fullfile(myDir,'*.png'));
- T=cell(n,1);
+%  T=cell(n,1);
  for k = 1:length(myFiles)
      filename = myFiles(k);
   
@@ -27,31 +28,29 @@ imageThumbnails = [];
      baseFileName = myFiles(k).name;
      fullFileName = fullfile(myDir, baseFileName);
      filecontent = imread(fullFileName);
-     T{k,1} = filecontent;
+%      T{k,1} = filecontent;
      
-     disp(fullFileName)
+%      disp(fullFileName)
      imageNames = [imageNames; string(fullFileName)];
      image=loadImage(fullFileName);
      [centers,radii]= findCircles(image);
-
-     
-     J = image;
-     tform = fitgeotrans(centers,fixedPoints,'NonreflectiveSimilarity');
-     Jregistered = imwarp(J,tform,'OutputView',imref2d(size(I)));
-%      figure
-%      imshowpair(I,Jregistered)
-
+      disp(centers)
+%      disp(size(centers))
+%     Iblur1 = imgaussfilt(image,2);
+     registered = correctImage(image, fixedPoints, centers, I);
      subplot(rows, cols, k)
-     imshow(Jregistered)
+%      imshow(registered)
+     montage({image, registered})
+
      title(fullFileName)
-     disp(centers)
-     viscircles(centers,radii);
+%      disp(centers)
+      viscircles(centers,radii);
 
      
  end
 
- patients = table(imageNames, T);
- disp(patients)
+%  patients = table(imageNames, T);
+%  disp(patients)
 
 
 

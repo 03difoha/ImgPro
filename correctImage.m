@@ -1,7 +1,12 @@
-function [outputArg1,outputArg2] = correctImage(inputArg1,inputArg2)
-%CORRECTIMAGE Summary of this function goes here
-%   Detailed explanation goes here
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+function [Jregistered] = correctImage(image, fixedPoints, movingPoints, I)
+     if size(fixedPoints) == size(movingPoints)
+         tform = fitgeotrans(movingPoints,fixedPoints,'projective');
+         Jregistered = imwarp(image,tform,'OutputView',imref2d(size(I)));
+     else
+        Jregistered = image;
+     end
 end
+
+
+
 
