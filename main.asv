@@ -24,12 +24,11 @@ for k = 1:length(myFiles)
     Iblur1 = imgaussfilt(image,2);
     registered = correctImage(Iblur1, fixedPoints, centers, I);
     subplot(rows, cols, k)
-    cropped = imcrop(registered,[70 70 339 339]);
-%     339 so we can divide cleanly 340 into parts
+    cropped = imcrop(registered,[70 70 340 340]);
 %         cropped = imcrop(registered,[17.5 17.5 85 85]);
 
-    C = mat2cell(cropped, [85 85 85 85],[85 85 85 85], [3]);
-    disp(size(cropped))
+    C = mat2cell(cropped,[17.5 17.7 17.5], [340 340], [1 1 1]);
+disp(size(cropped))
     montage({image, cropped})
     title(fullFileName)
     viscircles(centers,radii);
