@@ -1,0 +1,488 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>main</title><meta name="generator" content="MATLAB 9.11"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2022-03-29"><meta name="DC.source" content="main.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><pre class="codeoutput">&lt;head&gt;&lt;link rel="stylesheet" href="style.css"&gt;&lt;/head&gt;
+&lt;table&gt;
+&lt;tr&gt;&lt;th&gt;Filename&lt;/th&gt; &lt;th&gt;Image&lt;/th&gt; &lt;th&gt;Registered Image &lt;th&gt;Output&lt;/th&gt;  &lt;th&gt;Success&lt;/th&gt;  &lt;th&gt;Notes&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/noise_1.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/noise_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/noise_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;B Y G W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G W W B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W W G W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B Y Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/noise_2.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/noise_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/noise_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Y W W B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y B B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B B Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y W W&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/noise_3.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/noise_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/noise_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;W R R B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W W B W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R W R W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W B W B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/noise_4.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/noise_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/noise_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Bl Bl Bl Bl&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Bl Bl Bl Bl&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Bl Bl Bl Bl&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Bl Bl Bl Bl&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/noise_5.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/noise_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/noise_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;W W W B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B B W W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W B W W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/org_1.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/org_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/org_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Y Y B B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R R Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B Y B B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R Y R B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/org_2.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/org_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/org_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Y B Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B B Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B B B B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y B Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/org_3.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/org_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/org_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;R R Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B R Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R B Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R B R R&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/org_4.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/org_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/org_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;B R R B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R B R Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B G G G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R R Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/org_5.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/org_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/org_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Y G Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G G G B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G G B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y B B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj1_1.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj1_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj1_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;R Y B B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R Y B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y B R Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B R Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj1_2.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj1_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj1_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;G Y G B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G Y Y G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B W B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W Y G W&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj1_3.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj1_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj1_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;W W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj1_4.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj1_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj1_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Y Y G Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B B Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B G Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj1_5.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj1_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj1_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;G G B R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R B G G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y R G R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R G R Y&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj2_1.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj2_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj2_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;G B Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y G B G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G G Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y B G&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj2_2.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj2_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj2_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;B G B G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G G Y G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y B G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B Y G R&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj2_3.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj2_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj2_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;R G B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R G G Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G R G G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R Y B R&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj2_4.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj2_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj2_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;R Y G G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y R Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G R Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B G B R&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj2_5.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj2_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj2_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Y B G Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y B B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y B Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y G Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj_1.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Y G G Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y G B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R B B G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B G G Y&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj_2.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;W W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;W W W W&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj_3.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;R R B R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R Y B B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B B B B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R B Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj_4.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;G Y R R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R G G G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B R R Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B Y Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/proj_5.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/proj_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/proj_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;Y G B R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y R G&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B B Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/rot_1.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/rot_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/rot_1.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;R G Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B Y Y Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G G Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G R R R&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/rot_2.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/rot_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/rot_2.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;B Y B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G B B Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R R B B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G Y R R&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/rot_3.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/rot_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/rot_3.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;R R R R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R R R R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y R Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;R R R R&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/rot_4.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/rot_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/rot_4.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;G G Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y Y B B&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;B G G Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;G Y Y B&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;./images1/rot_5.png&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./images1/rot_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img width="200" height="200" src="./registeredImages/rot_5.png"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;table&gt;
+&lt;tr&gt;&lt;td&gt;B R G Y&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y R B R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y R Y R&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Y B Y G&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+&lt;td&gt;true&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2021b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+
+fixedPoints = [26.5 26.5; 26.5 445.5; 445.5 26.5; 445.5  445.5];
+myDir = fullfile('./images1'); 
+imageNames = [];
+output = [];
+disp('<head><link rel="stylesheet" href="style.css"></head>')
+disp('<table>')
+disp('<tr><th>Filename</th> <th>Image</th> <th>Registered Image <th>Output</th>  <th>Success</th>  <th>Notes</th></tr>')
+
+
+myFiles = dir(fullfile(myDir,'*.png'));
+for k = 1:length(myFiles)
+    
+    filename = myFiles(k);
+    baseFileName = myFiles(k).name;
+    fullFileName = fullfile(myDir, baseFileName);
+    filecontent = imread(fullFileName);
+    imageNames = [imageNames; string(fullFileName)];
+    image=loadImage(fullFileName);
+    [centers,radii]= findCircles(image);
+%     if ~ centers
+%         disp(fullFileName)
+%     end
+     image = imgaussfilt(image,2);
+    registered = correctImage(image, fixedPoints, centers, I);
+    resultMatrix = findColours(registered);
+
+     output = [output; join(resultMatrix)];
+     registeredName = './registeredImages/'+ string(baseFileName);
+     imwrite(registered, registeredName)
+
+%    disp(resultMatrix)
+     disp('<tr>')
+     disp('<td>' + string(fullFileName)+ '</td>');
+     disp('<td><img width="200" height="200" src="'+ string(fullFileName) +'"></td>');
+     disp('<td><img width="200" height="200" src="'+ registeredName +'"></td>');
+     disp('<td><table>')
+     disp('<tr><td>' + strjoin(resultMatrix(1,:), ' ')+ '</td></tr>');
+     disp('<tr><td>' + strjoin(resultMatrix(2,:), ' ')+ '</td></tr>');
+     disp('<tr><td>' + strjoin(resultMatrix(3,:), ' ')+ '</td></tr>');
+     disp('<tr><td>' + strjoin(resultMatrix(4,:), ' ')+ '</td></tr>');
+     disp('</table></td>')
+     disp('<td>true</td>');
+     disp('</tr>')
+
+
+ end
+
+disp('</table>')
+
+
+##### SOURCE END #####
+--></body></html>
