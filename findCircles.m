@@ -7,7 +7,6 @@ function [centers, radii] = findCircles(img)
     inverted = imcomplement(BW);
     stats = regionprops('table',inverted,'Centroid','MajorAxisLength','MinorAxisLength');
     centers = stats.Centroid;
-    diameters = mean([stats.MajorAxisLength stats.MinorAxisLength],2);
-    radii = diameters/2;
+    
 end
 

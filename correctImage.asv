@@ -1,21 +1,13 @@
-function [Jregistered] = correctImage(image, fixedPoints, movingPoints, I)
-    warped = false;
-    for i = 1:size(movingPoints,1)
-        xWarped = (movingPoints(i,1) - 26.5 >= 3) | (movingPoints(i,1) - 445.5 >= 3) ;
-        yWarped = (movingPoints(i,2) - 26.5 >= 3) | (movingPoints(i,2) - 445.5 >= 3) ;
-        if (logical(xWarped) & logical(yWarped))
-            warped = true;
-        end
-    end
-
-    if size(fixedPoints) == size(movingPoints) & warped
+function [Jregistered] = correctImage(image, movingPoints)
+    I = imread("./images1/org_1.png");
+    fixedPoints = [26.5 26.5; 26.5 445.5; 445.5 26.5; 445.5  445.5];
+    if size(fixedPoints) == size(movingPoints)
         tform = fitgeotrans(movingPoints,fixedPoints,'projective');
         Jregistered = imwarp(image,tform,'OutputView',imref2d(size(I)));
     else
         Jregistered = image;
+%         registration failed due to the moving points not being detected
     end
-        disp(warped)
-        disp('----------------')
 end
 
 

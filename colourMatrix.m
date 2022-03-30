@@ -1,7 +1,8 @@
-function [outputArg1,outputArg2] = colourMatrix(inputArg1,inputArg2)
-%COLOURMATRIX Summary of this function goes here
-%   Detailed explanation goes here
-outputArg1 = inputArg1;
-outputArg2 = inputArg2;
+function [registered, output] = colourMatrix(fullFileName)
+    image=loadImage(fullFileName);
+    centers= findCircles(image);
+    image = imgaussfilt(image,2);
+    registered = correctImage(image, centers);
+    output = findColours(registered);
 end
 

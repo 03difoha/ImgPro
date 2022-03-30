@@ -1,6 +1,5 @@
-function [loaded] = loadImage(img)
-    img = imread(img);
-         loaded = im2double(img);
-
+function [loaded] = loadImage(image)
+    image = imread(image);
+    loaded = im2double(image);
 %     loaded = round(double(img)/255);
 end
